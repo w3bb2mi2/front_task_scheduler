@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header h_40 ta_center bg_white">
+				<p>Создание тригера</p>
+			</div>
+			<div class="contant-container">
+				<div class="d_flex ml_17">
+					<div class="mr_15">
+						<p>Выбрать ВМ:</p>
+					</div>
+					<div class="jc_center">
+						<select id="selectID" class="mt_17">
+							<option value="ВМ_1">ВМ_1</option>
+							<option value="ВМ_2">ВМ_2</option>
+							<option value="ВМ_3">ВМ_3</option>
+							<option value="" disabled>ВМ_4</option>
+							<option value="ВМ_5">ВМ_5</option>
+							<option value="" disabled>ВМ_6</option>
+
+
+						</select>
+					</div>
+				</div>
+
+				<div class="mx_-4">
+					<fieldset>
+						<legend>Параметры</legend>
+						<div class="d_flex">
+							<div class="left d_flex fx_column border_r pr_15 mr_15">
+								<label class="mt_5 cp"> <input type="radio" name="happy"
+										value="once" class="freq"
+										checked/>Однократно
+								</label>
+								<label class="mt_5 cp"> <input type="radio" name="happy"
+										value="daily" class="freq"
+										/>Ежедневно </label>
+								<label class="mt_5 cp"> <input type="radio" name="happy"
+										value="weekly" class="freq"
+										/>Еженедельно </label>
+								<label class="mt_5 cp"> <input type="radio" name="happy"
+										value="monthly" class="freq"
+										/>Ежемесячно </label>
+							</div>
+							<div class="right d_flex fx_column">
+								<div>
+									<label for="date">Начать: </label>
+									<input type="date" id="date" name="date" class="h_22"/>
+									<input type="time" id="time" name="time" class="h_22"/>
+								</div>
+								<!-- ежедневно -->
+								<div>
+									<div class="d_flex hide daily">
+										<p>Повторять каждые:</p>
+										<!-- <input type="text" class="height_24 mt_10" /> -->
+										<input type="number" class="height_24 mt_10 mx_10 h_22 ml_44"
+											id="quantity"
+											name="quantity" min="1" max="30" step="1" value="1" />
+										<p>дней.</p>
+									</div>
+								</div>
+								<!-- Еженедельно -->
+								<div class="d_flex fx_column weekly hide">
+									<div class="d_flex">
+										<p>Повторять каждую:</p>
+										<!-- <input type="text" class="height_24 mt_10" /> -->
+										<input type="number" class="height_24 mt_10 mx_10 ml_17 h_22"
+											id="quantityWeek" value="1"
+											name="quantity" min="1" max="10" step="1" />
+										<p>неделю в:</p>
+									</div>
+									<div class="d_flex">
+										<div class="d_flex fx_column mr_20">
+											<div class="dayOfweek">
+												<input type="checkbox" id="Monday" name="Monday" class="weeklyDay"/>
+												<label for="Monday" class="cp">Понедельник</label>
+											</div>
+											<div class="dayOfweek">
+												<input type="checkbox" id="Friday" name="Friday"
+													class="weeklyDay"/>
+												<label for="Friday" class="cp">Пятница</label>
+											</div>
+										</div>
+										<div class="d_flex fx_column mr_20">
+											<div class="dayOfweek">
+												<input type="checkbox" id="Tuesday" name="Tuesday"
+													class="weeklyDay"/>
+												<label for="Tuesday" class="cp">Вторник</label>
+											</div>
+											<div class="dayOfweek">
+												<input type="checkbox" id="Saturday" name="Saturday"
+													class="weeklyDay"/>
+												<label for="Saturday" class="cp">Суббота</label>
+											</div>
+										</div>
+										<div class="d_flex fx_column mr_20">
+											<div class="dayOfweek">
+												<input type="checkbox" id="Wednesday" name="Wednesday"
+													class="weeklyDay"/>
+												<label for="Wednesday" class="cp">Среда</label>
+											</div>
+											<div class="dayOfweek">
+												<input type="checkbox" id="Sunday" name="Sunday"
+													class="weeklyDay"/>
+												<label for="Sunday" class="cp">Воскресенье</label>
+											</div>
+										</div>
+										<div class="d_flex fx_column">
+											<div class="dayOfweek">
+												<input type="checkbox" id="Thursday" name="Thursday"
+													class="weeklyDay"/>
+												<label for="Thursday" class="cp">Четверг</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- Ежемесячно -->
+								<div class="d_flex fx_column monthly hide">
+
+									<div class="d_flex fx_column w_430">
+										<div class="d_flex sb">
+											<p>Месяцы:</p>
+											<div class="">
+												<div class="w_250 bg_white mt_15 border_gray cp min_h_22">
+
+													<div class="month_cont d_flex justify_ar">
+														<div>
+															<div class="div_120">
+																<input type="checkbox" id="January" name="January"
+																	class="mon_check _120"/>
+																<label for="January" class="cp _120">Январь</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="February" name="February"
+																	class="mon_check
+																	_120"/>
+																<label for="February" class="cp _120">Февраль</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="March" name="March" class="mon_check
+																	_120" />
+																<label for="March" class="cp _120">Март</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="April" name="April" class="mon_check
+																	_120"/>
+																<label for="April" class="cp _120">Апрель</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="May" name="May" class="mon_check
+																	_120"/>
+																<label for="May" class="cp _120">Май</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="June" name="June" class="mon_check
+																	_120"/>
+																<label for="June" class="cp _120">Июнь</label>
+															</div>
+														</div>
+														<div>
+															<div class="div_120">
+																<input type="checkbox" id="July" name="July" class="mon_check
+																	_120"/>
+																<label for="July" class="cp _120">Июль</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="August" name="August"
+																	class="mon_check
+																	_120"/>
+																<label for="August" class="cp _120">Август</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="September" name="September"
+																	class="mon_check
+																	_120"/>
+																<label for="September" class="cp _120">Сентябрь</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="October" name="October"
+																	class="mon_check
+																	_120"/>
+																<label for="October" class="cp _120">Октябрь</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="November" name="November"
+																	class="mon_check
+																	_120"/>
+																<label for="November" class="cp _120">Ноябрь</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="December" name="December"
+																	class="mon_check
+																	_120"/>
+																<label for="December" class="cp _120">Декабрь</label>
+															</div>
+
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+										<hr>
+										<div class="d_flex sb">
+											<label class="mt_5 cp" id="btn_day"> <input type="checkbox"
+													name="radio_monthly" value="yes" id="radio_monthly"/>Дни: </label>
+											<div>
+												<div class="">
+													<div class="w_250 bg_white border_gray min_h_22 cp">
+														<div class="dayOfweek">
+															<p class="m_1 ellipsis hide" id="input_id2">...</p>
+														</div>
+														<div class="d_flex w_full" id="str180">
+															<div class="dayOfweek">
+																<p class="m_1 ellipsis" id="input_id_2">...</p>
+															</div>
+															<div class="internal_date w_full hide">
+																<div class="d_flex justify_ar">
+																	<!-- первый ряд -->
+																	<div>
+																		<div class="">
+																			<input type="checkbox" id="data_1" name="1"
+																				class="dataMonthly"
+																				name="data_1" />
+																			<label for="data_1" class="cp vert_al_top">1</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_2" name="2"
+																				class="dataMonthly"
+																				name="data_2" />
+																			<label for="data_2" class="cp vert_al_top">2</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_3" name="3"
+																				class="dataMonthly"
+																				name="data_3" />
+																			<label for="data_3" class="cp vert_al_top">3</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_4" name="4"
+																				class="dataMonthly"
+																				name="data_4" />
+																			<label for="data_4" class="cp vert_al_top">4</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_5" name="5"
+																				class="dataMonthly"
+																				name="data_5" />
+																			<label for="data_5" class="cp vert_al_top">5</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_6" name="6"
+																				class="dataMonthly"
+																				name="data_6" />
+																			<label for="data_6" class="cp vert_al_top">6</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_7" name="7"
+																				class="dataMonthly"
+																				name="data_7" />
+																			<label for="data_7" class="cp vert_al_top">7</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_8" name="8"
+																				class="dataMonthly"
+																				name="data_8" />
+																			<label for="data_8" class="cp vert_al_top">8</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_9" name="9"
+																				class="dataMonthly"
+																				name="data_9" />
+																			<label for="data_9" class="cp vert_al_top">9</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_10" name="10"
+																				class="dataMonthly"
+																				name="data_10" />
+																			<label for="data_10" class="cp vert_al_top">10</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_11" name="11"
+																				class="dataMonthly"
+																				name="data_11" />
+																			<label for="data_11" class="cp vert_al_top">11</label>
+																		</div>
+
+																	</div>
+																	<!-- второй ряд -->
+																	<div>
+																		<div class="">
+																			<input type="checkbox" id="data_12" name="12"
+																				class="dataMonthly"
+																				name="data_12" />
+																			<label for="data_12" class="cp vert_al_top">12</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_13" name="13"
+																				class="dataMonthly"
+																				name="data_13" />
+																			<label for="data_13" class="cp vert_al_top">13</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_14" name="14"
+																				class="dataMonthly"
+																				name="data_14" />
+																			<label for="data_14" class="cp vert_al_top">14</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_15" name="15"
+																				class="dataMonthly"
+																				name="data_15" />
+																			<label for="data_15" class="cp vert_al_top">15</label>
+																		</div>
+
+																		<div class="">
+																			<input type="checkbox" id="data_16" name="16"
+																				class="dataMonthly"
+																				name="data_16" />
+																			<label for="data_16" class="cp vert_al_top">16</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_17" name="17"
+																				class="dataMonthly"
+																				name="data_17" />
+																			<label for="data_17" class="cp vert_al_top">17</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_18" name="18"
+																				class="dataMonthly"
+																				name="data_18" />
+																			<label for="data_18" class="cp vert_al_top">18</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_19" name="19"
+																				class="dataMonthly"
+																				name="data_19" />
+																			<label for="data_19" class="cp vert_al_top">19</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_20" name="20"
+																				class="dataMonthly"
+																				name="data_20" />
+																			<label for="data_20" class="cp vert_al_top">20</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_21" name="21"
+																				class="dataMonthly"
+																				name="data_21" />
+																			<label for="data_21" class="cp vert_al_top">21</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_22" name="22"
+																				class="dataMonthly"
+																				name="data_22" />
+																			<label for="data_22" class="cp vert_al_top">22</label>
+																		</div>
+
+																	</div>
+																	<!-- третий ряд -->
+																	<div>
+																		<div class="">
+																			<input type="checkbox" id="data_23" name="23"
+																				class="dataMonthly"
+																				name="data_23" />
+																			<label for="data_23" class="cp vert_al_top">23</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_24" name="24"
+																				class="dataMonthly"
+																				name="data_24" />
+																			<label for="data_24" class="cp vert_al_top">24</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_25" name="25"
+																				class="dataMonthly"
+																				name="data_25" />
+																			<label for="data_25" class="cp vert_al_top">25</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_26" name="26"
+																				class="dataMonthly"
+																				name="data_26" />
+																			<label for="data_26" class="cp vert_al_top">26</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_27" name="27"
+																				class="dataMonthly"
+																				name="data_27" />
+																			<label for="data_27" class="cp vert_al_top">27</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_28" name="28"
+																				class="dataMonthly"
+																				name="data_28" />
+																			<label for="data_28" class="cp vert_al_top">28</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_29" name="29"
+																				class="dataMonthly"
+																				name="data_29" />
+																			<label for="data_29" class="cp vert_al_top">29</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_30" name="30"
+																				class="dataMonthly"
+																				name="data_30" />
+																			<label for="data_30" class="cp vert_al_top">30</label>
+																		</div>
+																		<div class="">
+																			<input type="checkbox" id="data_31" name="31"
+																				class="dataMonthly"
+																				name="data_31" />
+																			<label for="data_31" class="cp vert_al_top">31</label>
+																		</div>
+
+																	</div>
+
+																</div>
+
+
+
+															</div>
+														</div>
+													</div>
+
+												</div>
+											</div>
+
+
+
+
+										</div>
+
+										<div class="d_flex sb">
+											<div>
+												<label class="mt_5 cp" id="btn_day2"> <input type="checkbox"
+														name="radio_monthly" value="yes" id="radio_monthly2"
+														class="mt_20">В:
+												</label>
+											</div>
+											<div class="d_flex w_253 sb">
+												<div class="w_100 bg_white mt_15 border_gray cp min_h_22">
+													<div id="_id1251">
+														<p class="m_1">...</p>
+													</div>
+
+													<div class="month_cont d_flex hide" id="_id1251_2">
+														<div>
+															<div class="div_120">
+																<input type="checkbox" id="week_1" name="week_1"
+																	class="inWeek _120"/>
+																<label for="week_1" class="cp _120">1-ю нед.</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="week_2" name="week_2" class="inWeek
+																	_120"/>
+																<label for="week_2" class="cp _120">2-ю нед.</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="week_3" name="week_3"
+																	class="inWeek
+																	_120" />
+																<label for="week_3" class="cp _120">3-ю нед.</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="week_4" name="week_4" class="inWeek
+																	_120"/>
+																<label for="week_4" class="cp _120">4-ю нед.</label>
+															</div>
+															<div class="div_120">
+																<input type="checkbox" id="week_last" name="week_last"
+																	class="inWeek
+																	_120"/>
+																<label for="week_last" class="cp _120">Посл.</label>
+															</div>
+
+														</div>
+
+
+													</div>
+												</div>
+
+												<div class="">
+													<div class="">
+														<div class="w_145 bg_white mt_15 border_gray cp min_h_22">
+															<div id="_id1257">
+																<p class="m_1">...</p>
+															</div>
+															<div class="month_cont d_flex hide" id="_id1257-2">
+																<div>
+																	<div class="div_120">
+																		<input type="checkbox" id="all_days" name="all_days"
+																			class=" _120"/>
+																		<label for="all_days" class="cp _120">Выбрать всё</label>
+																	</div>
+																	<div class="div_120">
+																		<input type="checkbox" id="in_mon" name="Monday"
+																			class="dayWeekMonthly
+																			_120"/>
+																		<label for="in_mon" class="cp _120">Понедельник</label>
+																	</div>
+																	<div class="div_120">
+																		<input type="checkbox" id="in_tue" name="Tuesday"
+																			class="dayWeekMonthly
+																			_120" />
+																		<label for="in_tue" class="cp _120">Вторник</label>
+																	</div>
+																	<div class="div_120">
+																		<input type="checkbox" id="in_wed" name="Wednesday"
+																			class="dayWeekMonthly
+																			_120"/>
+																		<label for="in_wed" class="cp _120">Среда</label>
+																	</div>
+																	<div class="div_120">
+																		<input type="checkbox" id="in_thur" name="Thursday"
+																			class="dayWeekMonthly
+																			_120"/>
+																		<label for="in_thur" class="cp _120">Четверг</label>
+																	</div>
+																	<div class="div_120">
+																		<input type="checkbox" id="in_fri" name="Friday"
+																			class="dayWeekMonthly
+																			_120"/>
+																		<label for="in_fri" class="cp _120">Пятница</label>
+																	</div>
+																	<div class="div_120">
+																		<input type="checkbox" id="in_sat" name="Saturday"
+																			class="dayWeekMonthly
+																			_120"/>
+																		<label for="in_sat" class="cp _120">Суббота</label>
+																	</div>
+																	<div class="div_120">
+																		<input type="checkbox" id="in_san" name="Sunday"
+																			class="dayWeekMonthly
+																			_120"/>
+																		<label for="in_san" class="cp _120">Воскресенье</label>
+																	</div>
+																</div>
+
+
+															</div>
+														</div>
+
+													</div>
+
+												</div>
+
+
+
+
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</div>
+							<div class="d_flex jc_end">
+								<div class="my_10 mr_15 ">
+									<button class="cp" id="sendJsonBTN">Отправить</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<script src="./script.js"></script>
+				</body>
+			</html>

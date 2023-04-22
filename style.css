@@ -1,0 +1,161 @@
+.container {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  /* border-radius: 5px; */
+  min-height: 250px;
+  background-color: rgb(240, 240, 240);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.cp {
+  cursor: pointer;
+}
+.fx_column {
+  flex-direction: column;
+}
+
+.d_flex {
+  display: flex;
+}
+.container-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vert_al_top {
+  vertical-align: top;
+}
+
+.m_1 {
+  margin: 1px;
+}
+.mr_5 {
+  margin-right: 5px;
+}
+
+.mr_15 {
+  margin-right: 15px;
+}
+.mr_20 {
+  margin-right: 20px;
+}
+.mt_5 {
+  margin-top: 5px;
+}
+.mt_7 {
+  margin-top: 7px;
+}
+.mt_10 {
+  margin-top: 10px;
+}
+.mt_15 {
+  margin-top: 15px;
+}
+.mt_17 {
+  margin-top: 17px;
+}
+.mt_20 {
+  margin-top: 20px;
+}
+.ml_17 {
+  margin-left: 17px !important;
+}
+.ml_44 {
+  margin-left: 44px !important;
+}
+.mx_10 {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.my_10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.mx_-4 {
+  margin-right: -4px;
+  margin-left: -4px;
+}
+.pr_15 {
+  padding-right: 15px;
+}
+
+.mb_15 {
+  margin-bottom: 15px;
+}
+
+.contant-container {
+  background-color: rgb(240, 240, 240);
+}
+.border_gray {
+  border: 1px solid rgb(160, 160, 160);
+}
+.border_r {
+  border-right: 1px solid rgb(160, 160, 160);
+}
+.height_24 {
+  height: 25px;
+}
+.w_100 {
+  width: 100px;
+}
+.w_145 {
+  width: 145px;
+}
+.w_150 {
+  width: 150px;
+}
+.w_250 {
+  width: 250px;
+}
+
+.w_253 {
+  width: 253px;
+}
+
+.w_280 {
+  width: 280px;
+}
+.w_400 {
+  width: 400px;
+}
+.w_430 {
+  width: 430px;
+}
+.w_full {
+  width: 100%;
+}
+.h_22 {
+  height: 22px;
+}
+.h_40 {
+  height: 40px;
+}
+.min_h_22 {
+  min-height: 22px;
+}
+.min_h_40 {
+  min-height: 40px;
+}
+.hide {
+  display: none;
+}
+.sb {
+  justify-content: space-between;
+}
+.justify_ar {
+  justify-content: space-around;
+}
+.ta_center {
+  text-align: center;
+}
+.jc_center {
+  justify-content: center;
+}
+.jc_end {
+  justify-content: flex-end;
+}
+.bg_white {
+  background-color: white;
+}
